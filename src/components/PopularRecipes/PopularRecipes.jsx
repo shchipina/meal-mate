@@ -20,7 +20,7 @@ export const PopularRecipes = () => {
           ))
         ) : (
           data?.map(item => (
-            <PopularCard item={item} key={item.strMeal} />
+            <PopularCard item={item} key={item.idMeal} />
           ))
         )}
       </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const PopularCard = ({ item }) => {
   return (
     <article className="lg:w-[350px] rounded-3xl overflow-hidden bg-amber-50">
@@ -17,9 +19,12 @@ export const PopularCard = ({ item }) => {
         </p>
 
         <div className="flex justify-end">
-          <button className="border border-b-[#333] rounded-3xl px-[24px] py-[6px] uppercase hover:bg-[#9FDC26]">
+          <Link
+            to={`/details/${item.idMeal}`}
+            className="border border-b-[#333] rounded-3xl px-[24px] py-[6px] uppercase hover:bg-[#9FDC26]"
+          >
             View recipe
-          </button>
+          </Link>
         </div>
       </div>
     </article>
