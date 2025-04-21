@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { getRecipeById } from "../services/api.js";
 import { useQuery } from "@tanstack/react-query";
 
+import ReactPlayer from 'react-player/youtube'
+
 export const RecipeDetails = () => {
   const { id } = useParams();
   const { data, isLoading, isError } = useQuery({
@@ -34,11 +36,11 @@ export const RecipeDetails = () => {
     }
   }
 
-  console.log('img ', strMealThumb)
-
   return (
-    <section>
-      <h3 className="text-[22px] uppercase text-[#EE6352] font-medium">{strMeal}</h3>
+    <section className="mb-10">
+      <h3 className="text-[22px] uppercase text-[#EE6352] font-medium">
+        {strMeal}
+      </h3>
       <div className="grid grid-cols-1 gap-10  md:grid-cols-2 my-[36px]">
         <div className="rounded-4xl max-w-[560px] max-h-[350px] overflow-hidden shadow-2xl">
           <img
@@ -83,10 +85,24 @@ export const RecipeDetails = () => {
         </p>
       </div>
 
-      <div>
-        <h4>Watch the video recipe</h4>
-        <iframe src={strYoutube} frameborder="0"></iframe>
-      </div>
+      {strYoutube && (
+        <div>
+          <h4 className="text-[18px] text-center font-medium uppercase text-[#EE6352] my-6 pt-6 border-t-2 border-[#EE6352]">
+            Watch the video recipe 🍳
+          </h4>
+
+          <div className="max-w-[560px] mx-auto rounded-2xl overflow-hidden">
+            <ReactPlayer
+              light
+              controls={true}
+              url={strYoutube}
+              width="100%"
+              height="240px"
+              playing
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

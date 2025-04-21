@@ -1,5 +1,5 @@
 export const WeeklyMenu = () => {
   return (
-    <div>WeeklyMenu</div>
+    <div>Weekly Menu</div>
   )
 }

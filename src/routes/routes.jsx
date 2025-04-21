@@ -5,6 +5,7 @@ import { Home } from "../pages/Home.jsx";
 import { Recipes } from "../pages/Recipes.jsx";
 import { Favorites } from "../pages/Favorites.jsx";
 import { RecipeDetails } from "../pages/RecipeDetails.jsx";
+import { WeeklyMenu } from "../pages/WeeklyMenu.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { path: "recipes", element: <Recipes /> },
       { path: "favorites", element: <Favorites /> },
       { path: "details/:id", element: <RecipeDetails /> },
+      { path: "weekly-menu", element: <WeeklyMenu /> },
     ],
   },
 ]);

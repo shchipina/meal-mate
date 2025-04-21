@@ -7,7 +7,6 @@ export const Home = () => {
     <div className="main">
       <Slider />
       <PopularRecipes />
-      <Footer />
     </div>
   );
 }

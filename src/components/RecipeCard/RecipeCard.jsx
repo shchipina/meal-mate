@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { FavoriteButton } from "../../ui/FavoriteButton";
 
 export const RecipeCard = ({ item }) => {
   return (
-    <article className="lg:w-[350px] rounded-3xl overflow-hidden bg-amber-50">
+    <article className="w-[350px] sm:w-full rounded-3xl overflow-hidden bg-amber-50">
       <img
         src={item.strMealThumb}
         alt={item.strMeal}
@@ -21,13 +22,15 @@ export const RecipeCard = ({ item }) => {
           }
         </p>
 
-        <div className="flex justify-end">
+        <div className="flex justify-between">
           <Link
             to={`/details/${item.idMeal}`}
             className="border border-b-[#333] rounded-3xl px-[24px] py-[6px] uppercase hover:bg-[#9FDC26]"
           >
             View recipe
           </Link>
+
+          <FavoriteButton item={item} />
         </div>
       </div>
     </article>
