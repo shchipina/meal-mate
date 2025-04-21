@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const PopularCard = ({ item }) => {
+export const RecipeCard = ({ item }) => {
   return (
     <article className="lg:w-[350px] rounded-3xl overflow-hidden bg-amber-50">
       <img
@@ -10,7 +10,10 @@ export const PopularCard = ({ item }) => {
       />
 
       <div className="p-6">
-        <p className="text-[24px] font-medium py-3">
+        <p
+          className="text-[18px] font-medium py-3"
+          title={item.strMeal}
+        >
           {
             item.strMeal.length > 28
               ? `${item.strMeal.slice(0, 28)}...`
