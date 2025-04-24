@@ -8,7 +8,7 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <ul className="flex gap-2">
+      <ul className="flex gap-2 font-medium">
         <li>
           <NavLink
             to="/"
