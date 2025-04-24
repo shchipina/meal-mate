@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 import { App } from "../App.jsx";
 import { Home } from "../pages/Home.jsx";
@@ -7,16 +7,15 @@ import { Favorites } from "../pages/Favorites.jsx";
 import { RecipeDetails } from "../pages/RecipeDetails.jsx";
 import { WeeklyMenu } from "../pages/WeeklyMenu.jsx";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "recipes", element: <Recipes /> },
-      { path: "favorites", element: <Favorites /> },
-      { path: "details/:id", element: <RecipeDetails /> },
-      { path: "weekly-menu", element: <WeeklyMenu /> },
-    ],
-  },
-]);
+export const router = (
+  <Routes>
+    <App />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="recipes" element={<Recipes />} />
+      <Route path="favorites" element={<Favorites />} />
+      <Route path="details/:id" element={<RecipeDetails />} />
+      <Route path="weekly-menu" element={<WeeklyMenu />} />
+    </Routes>
+  </Routes>
+);
