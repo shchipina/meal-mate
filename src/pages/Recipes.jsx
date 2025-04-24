@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCategory } from "../hooks/useRecipes";
 import cn from "classnames";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getMealsByCategory } from "../services/api";
 import { RecipeCard } from "../components/RecipeCard/RecipeCard";
 import { Skeleton } from "../components/RecipeCard/Skeleton";
@@ -19,6 +19,7 @@ export const Recipes = () => {
     queryKey: ["meals", categoryActive],
     queryFn: () => getMealsByCategory(categoryActive),
     enabled: !!categoryActive,
+    placeholderData: keepPreviousData,
   });
 
   if (isLoading) return <h1>Loading categories...</h1>;
@@ -37,8 +38,8 @@ export const Recipes = () => {
             <li key={category.idCategory}>
               <button
                 onClick={() => setCategoryActive(category.strCategory)}
-                className={cn("border border-b-[#333] rounded-3xl px-[24px] py-[6px] uppercase", {
-                  "bg-[#9FDC26]": category.strCategory === categoryActive,
+                className={cn("border border-b-[#262522] opacity-60 rounded-3xl px-[24px] py-[6px] uppercase hover:opacity-100 cursor-pointer", {
+                  "bg-[#9FDC26] opacity-100": category.strCategory === categoryActive,
                 })}
               >
                 {category.strCategory}

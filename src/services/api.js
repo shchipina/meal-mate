@@ -20,16 +20,10 @@ export const getPopularRecipes = async () => {
   return data.meals.slice(0, 6);
 };
 
+export const getMealsByCategory = (category) => fetchFromAPI(`/filter.php?c=${category}`);
+
 export const getRandomMeal = () => fetchFromAPI('/random.php');
 
 export const getRecipeById = (id) => fetchFromAPI(`/lookup.php?i=${id}`);
 
-export const searchRecipes = (query) => fetchFromAPI(`/search.php?s=${query}`);
-
 export const getCategories = () => fetchFromAPI('/categories.php');
-
-export const getMealsByCategory = (category) => fetchFromAPI(`/filter.php?c=${category}`);
-
-export const getAreas = () => fetchFromAPI('/list.php?a=list');
-
-export const getMealsByArea = (area) => fetchFromAPI(`/filter.php?a=${area}`);

@@ -13,14 +13,14 @@ export const PopularRecipes = () => {
     <section className="py-[80px]">
       <h2 className="text-[32px] mb-7">Popular recipes</h2>
 
-      <div className="grid gap-6 place-items-center grid-col-1 lg:grid-cols-3 md:grid-cols-2">
+      <div className="grid gap-6 place-items-center grid-cols-1 lg:grid-cols-3 md:grid-cols-2 px-3">
         {isLoading ? (
           Array.from({ length: 6 }).map((_, i) => (
             <Skeleton key={i} />
           ))
         ) : (
-          data?.map(item => (
-            <RecipeCard item={item} key={item.idMeal} />
+          data?.map(meal => (
+            <RecipeCard item={meal} key={meal.idMeal} />
           ))
         )}
       </div>

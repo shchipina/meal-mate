@@ -11,8 +11,9 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addRecipe: (state, action) => {
-      const recipe = action.payload;
-      const alreadyAdded = state.recipes.find(r => r.idMeal === recipe.idMeal);
+      const alreadyAdded = state.recipes.find(recipe => {
+        recipe.idMeal === action.payload.idMeal
+      });
 
       if (!alreadyAdded) {
         state.recipes.push(action.payload);

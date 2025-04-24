@@ -1,10 +1,13 @@
-import { NavLink, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+import { Navbar } from "./Navbar";
+import { MdFavoriteBorder } from "react-icons/md";
+// import { HiMenuAlt3, HiX } from "react-icons/hi";
 import logo from "../assets/logo.svg";
 
 export const Header = () => {
-  const setActiveStyle = ({ isActive }) => {
-    return isActive ? "pb-0.5 border-b-3 rounded border-[#EE6352]" : ''
-  };
+  const recipes = useSelector(state => state.favorites.recipes);
 
   return (
     <header className="py-[30px]">
@@ -13,39 +16,14 @@ export const Header = () => {
           <img src={logo} alt="Meat Mate" />
         </Link>
 
-        <nav>
-          <ul className="flex gap-2">
-            <li>
-              <NavLink
-                to="/"
-                className={setActiveStyle}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/recipes"
-                className={setActiveStyle}
-              >
-                Recipes
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/weekly-menu"
-                className={setActiveStyle}
-              >
-                Weekly menu
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
 
-        <div className="flex gap-3">
-          <Link to="/favorites">Favorites</Link>
-          <Link to="/">User</Link>
-        </div>
+        <Link to="/favorites" className="relative">
+          <MdFavoriteBorder size={30} opacity={0.7} />
+          <span className="absolute right-[-7px] top-[-7px] bg-[#EE6352] w-[18px] h-[18px] text-center leading-[18px] text-[12px] rounded-full text-white font-medium">
+            {recipes.length > 9 ? "9+" : recipes.length}
+          </span>
+        </Link>
       </div>
     </header>
   );

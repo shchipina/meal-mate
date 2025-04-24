@@ -1,12 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCategories, getPopularRecipes, getRandomMeal } from "../services/api";
-
-export const useRandomRecipe = () => {
-  return useQuery({
-    queryKey: ["random"],
-    queryFn: getRandomMeal
-  });
-}
+import { getCategories, getPopularRecipes } from "../services/api";
 
 export const usePopularRecipes = () => { 
   return useQuery({
