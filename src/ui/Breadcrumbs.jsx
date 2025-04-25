@@ -19,7 +19,6 @@ export const Breadcrumbs = () => {
     ? pathnames.slice(0, -1)
     : pathnames;
 
-
   return (
     <div className="flex items-center text-[#555]">
       <Link to="/" className="text-[14px] hover:text-[#EE6352] hover:underline transition-all duration-150">
@@ -41,4 +40,4 @@ export const Breadcrumbs = () => {
       })}
     </div>
   );
-}
+};

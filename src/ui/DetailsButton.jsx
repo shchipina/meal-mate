@@ -9,4 +9,5 @@ export const DetailsButton = ({id}) => {
       View recipe
     </Link>
   );
-} 
+};
+ 

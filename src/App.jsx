@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 import { Breadcrumbs } from "./ui/Breadcrumbs";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   const location = useLocation();
