@@ -7,8 +7,6 @@ export const App = () => {
   const location = useLocation();
   const pathname = location.pathname;
   
-  console.log(pathname)
-
   return (
     <div className="flex flex-col min-h-screen max-w-[1200px] mx-auto px-[10px]">
       <Header />
