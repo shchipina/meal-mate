@@ -7,7 +7,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className="hidden sm:flex">
       <ul className="flex gap-2 font-medium text-[#444]">
         <li>
           <NavLink

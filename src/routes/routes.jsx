@@ -15,7 +15,7 @@ export const router = createHashRouter([
       { index: true, element: <Home /> },
       { path: "recipes", element: <Recipes /> },
       { path: "favorites", element: <Favorites /> },
-      { path: "details/:id", element: <RecipeDetails /> },
+      { path: "recipes/details/:id", element: <RecipeDetails /> },
       { path: "weekly-menu", element: <WeeklyMenu /> },
     ],
   },

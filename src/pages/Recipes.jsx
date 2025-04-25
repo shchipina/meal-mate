@@ -40,7 +40,7 @@ export const Recipes = () => {
             <li key={category.idCategory}>
               <button
                 onClick={() => setCategoryActive(category.strCategory)}
-                className={cn("border border-b-[#262522] opacity-60 rounded-3xl px-[24px] py-[6px] uppercase hover:opacity-100 cursor-pointer", {
+                className={cn("border border-b-[#333] opacity-60 rounded-3xl sm:px-[24px] py-[6px] px-[12px] uppercase hover:opacity-100 cursor-pointer", {
                   "bg-[#9FDC26] opacity-100": category.strCategory === categoryActive,
                 })}
               >
