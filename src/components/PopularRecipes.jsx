@@ -1,9 +1,13 @@
-import { usePopularRecipes } from "../hooks/useRecipes";
+import { useQuery } from "@tanstack/react-query";
+import { getPopularRecipes } from "../services/api";
 import { RecipeCard } from "./RecipeCard/RecipeCard";
 import { Skeleton } from "./RecipeCard/Skeleton";
 
 export const PopularRecipes = () => {
-  const { data, isLoading, isError } = usePopularRecipes();
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["popular"],
+    queryFn: getPopularRecipes,
+  });
 
   if (isError) {
     return <h2>Opps...error😧</h2>

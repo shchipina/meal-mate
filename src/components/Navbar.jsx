@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   const setActiveStyle = ({ isActive }) => {
-    return isActive ? "pb-0.5 border-b-3 rounded border-[#EE6352]" : ''
+    return isActive ? "pb-0.5 border-b-3 rounded border-[#EE6352]" : '';
   };
 
   return (
     <nav>
-      <ul className="flex gap-2 font-medium">
+      <ul className="flex gap-2 font-medium text-[#444]">
         <li>
           <NavLink
             to="/"
-            className={setActiveStyle}
+            className={({ isActive }) => `hover:text-[#EE6352] ${setActiveStyle({ isActive })}`}
           >
             Home
           </NavLink>
@@ -20,7 +20,7 @@ export const Navbar = () => {
         <li>
           <NavLink
             to="/recipes"
-            className={setActiveStyle}
+            className={({ isActive }) => `hover:text-[#EE6352] ${setActiveStyle({ isActive })}`}
           >
             Recipes
           </NavLink>
@@ -28,13 +28,12 @@ export const Navbar = () => {
         <li>
           <NavLink
             to="/weekly-menu"
-            className={setActiveStyle}
+            className={({ isActive }) => `hover:text-[#EE6352] ${setActiveStyle({ isActive })}`}
           >
             Weekly menu
           </NavLink>
         </li>
       </ul>
     </nav>
-  )
-}
-
+  );
+};

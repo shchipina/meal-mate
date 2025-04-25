@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { useCategory } from "../hooks/useRecipes";
 import cn from "classnames";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { getMealsByCategory } from "../services/api";
+import { getCategories, getMealsByCategory } from "../services/api";
 import { RecipeCard } from "../components/RecipeCard/RecipeCard";
 import { Skeleton } from "../components/RecipeCard/Skeleton";
 
 export const Recipes = () => {
   const [categoryActive, setCategoryActive] = useState("Beef");
-  const { data, isLoading, isError } = useCategory();
+  const { data, isLoading, isError } = useQuery({
+      queryKey: ["category"],
+      queryFn: getCategories,
+    });
 
   const {
     data: meals,
