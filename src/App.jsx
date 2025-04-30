@@ -3,7 +3,7 @@ import { Header } from "./components/Header";
 import { Breadcrumbs } from "./ui/Breadcrumbs";
 import { Footer } from "./components/Footer";
 
-export const App = () => {
+const App = () => {
   const location = useLocation();
   const pathname = location.pathname;
   
@@ -18,3 +18,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App
