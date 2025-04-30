@@ -5,8 +5,6 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { FcLike } from "react-icons/fc";
 
 export const FavoriteButton = ({ item }) => {
-  // const { isFavorite, toggleFavorite } = useFavorite(meal);
-
   const recipes = useSelector(state => state.favorites.recipes);
   const dispatch = useDispatch();
 

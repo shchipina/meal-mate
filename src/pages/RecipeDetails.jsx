@@ -2,8 +2,6 @@ import { useParams } from "react-router-dom";
 import { getRecipeById } from "../services/api.js";
 import { useQuery } from "@tanstack/react-query";
 
-// import { useFavorite } from "../hooks/useFavorite.js"
-
 import ReactPlayer from 'react-player/youtube'
 import { FavoriteButton } from "../ui/FavoriteButton.jsx";
 
@@ -19,8 +17,6 @@ export const RecipeDetails = () => {
   if (isError) return <p>Something went wrong 😢</p>;
 
   const meal = data.meals[0];
-
-  // const { isFavorite, toggleFavorite } = useFavorite(meal);
 
   const {
     strMeal,
@@ -62,13 +58,6 @@ export const RecipeDetails = () => {
             <h4 className="text-[18px] uppercase text-[#EE6352]">
               Ingredients 🌾
             </h4>
-
-            {/* <button
-              className="p-2 rounded-3xl border border-amber-600"
-              onClick={toggleFavorite}
-            >
-              {isFavorite ? "Added to Favorite" : "Add to Favorite"}
-            </button> */}
               <FavoriteButton item={meal} />
           </div>
           <ul>
