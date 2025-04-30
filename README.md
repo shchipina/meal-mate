@@ -1,6 +1,6 @@
 # Meal Mate 🍴🥗
 
-<a href="https://shchipina.github.io/meal-mate/#/"><DEMO LINK/a>
+<a href="https://shchipina.github.io/meal-mate/#/">DEMO LINK</a>
 
 ## Description 📃
 Meal Mate is a recipe viewer and weekly menu creatorthat helps users organize their meals with a simple and user-friendly interface. Using the TheMealDB API, the app generates random recipes for the week, allowing users to discover new dishes and save them to their favorites to local storage. All this makes meal planning convenient, simple, and fun.
